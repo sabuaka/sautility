@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 setup(
     name='sautility',
     packages=['sautility'],
-    version='0.0.3',
+    version='0.0.4',
     description='',
     author='sabuaka',
     author_email='sabuaka-fx@hotmail.com',

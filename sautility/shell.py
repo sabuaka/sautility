@@ -27,7 +27,7 @@ def getch():
             old = termios.tcgetattr(fd)
             try:
                 tty.setraw(fd)
-                return sys.stdin.read(1)
+                return sys.stdin.read(1).encode('utf-8')
             finally:
                 termios.tcsetattr(fd, termios.TCSADRAIN, old)
     
