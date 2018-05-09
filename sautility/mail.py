@@ -1,12 +1,13 @@
 # -*- coding: utf-8 -*-
-import sys
+'''Mail utility module'''
 import json
 from smtplib import SMTP
 from email.mime.text import MIMEText
 from email.header import Header
 
-class gmail(object):
-    '''Gmail送信(２段階認証対応版)モジュール'''
+
+class Gmail(object):
+    '''class for Gmail(２段階認証対応版)'''
     # パスワードは、Googleのアカウントにてアプリパスワードを取得して使用してください。
     # 参考：https://support.google.com/mail/answer/185833?hl=ja
 
@@ -29,11 +30,11 @@ class gmail(object):
 
     def __init__(self, user, password):
         '''イニシャライザ'''
-        self.mail_user = user  
+        self.mail_user = user
         self.mail_pass = password
         self.mail_addr = user       # Gmailのログインユーザー名は自分のアドレス
 
-    def send_mail(self, to_addrs:[], subject, body, sub_type='plain'):
+    def send_mail(self, to_addrs: [], subject, body, sub_type='plain'):
         '''メールの送信'''
         # パラメータの設定
         smtp_server = 'smtp.gmail.com'
