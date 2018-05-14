@@ -2,6 +2,13 @@
 '''Shell utility module'''
 import sys
 import os
+import builtins as __builtin__
+
+
+def print(*args, **kwargs):  # override pylint: disable-msg=W0622
+    '''override print'''
+    kwargs['end'] = '\r\n'
+    return __builtin__.print(*args, **kwargs)
 
 
 def isccbreak(key):
