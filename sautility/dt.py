@@ -3,6 +3,16 @@
 import datetime
 
 
+def get_hour():
+    """現在時刻の時をintで取得"""
+    return int(datetime.datetime.now().strftime('%H'))
+
+
+def get_minute():
+    """現在時刻の分をintで取得"""
+    return int(datetime.datetime.now().strftime('%M'))
+
+
 def get_dt_short():
     """現在の日時を文字列(YYYYMMDDHHMMSS)で返す"""
     return datetime.datetime.now().strftime('%Y%m%d%H%M%S')
