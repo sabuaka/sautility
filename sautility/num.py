@@ -8,11 +8,11 @@ def n2d(value) -> Decimal:
     return Decimal(str(value))
 
 
-def round4d(src_value: Decimal, precision) -> Decimal:
+def dround(src_value: Decimal, precision) -> Decimal:
     '''四捨五入 for Decimal'''
     return src_value.quantize(Decimal(str(precision)), rounding=ROUND_HALF_UP)
 
 
-def floor4d(src_value: Decimal, precision) -> Decimal:
+def dfloor(src_value: Decimal, precision) -> Decimal:
     '''切り捨て for Decimal'''
     return src_value.quantize(Decimal(str(precision)), rounding=ROUND_FLOOR)
