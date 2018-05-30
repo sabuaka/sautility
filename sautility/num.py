@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 '''Number utility module'''
-from decimal import Decimal, ROUND_HALF_UP, ROUND_FLOOR
+from decimal import Decimal, ROUND_HALF_UP, ROUND_FLOOR, ROUND_CEILING
 
 
 def n2d(value) -> Decimal:
@@ -16,3 +16,8 @@ def dround(src_value: Decimal, precision) -> Decimal:
 def dfloor(src_value: Decimal, precision) -> Decimal:
     '''切り捨て for Decimal'''
     return src_value.quantize(Decimal(str(precision)), rounding=ROUND_FLOOR)
+
+
+def dceiling(src_value: Decimal, precision) -> Decimal:
+    '''切り上げ for Decimal'''
+    return src_value.quantize(Decimal(str(precision)), rounding=ROUND_CEILING)
