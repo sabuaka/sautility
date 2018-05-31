@@ -5,19 +5,31 @@ from decimal import Decimal, ROUND_HALF_UP, ROUND_FLOOR, ROUND_CEILING
 
 def n2d(value) -> Decimal:
     '''数値(int,float)をDecimal型へ変換'''
-    return Decimal(str(value))
+    try:
+        return Decimal(str(value))
+    except:
+        return None
 
 
 def dround(src_value: Decimal, precision) -> Decimal:
     '''四捨五入 for Decimal'''
-    return src_value.quantize(Decimal(str(precision)), rounding=ROUND_HALF_UP)
+    try:
+        return src_value.quantize(Decimal(str(precision)), rounding=ROUND_HALF_UP)
+    except:
+        return None
 
 
 def dfloor(src_value: Decimal, precision) -> Decimal:
     '''切り捨て for Decimal'''
-    return src_value.quantize(Decimal(str(precision)), rounding=ROUND_FLOOR)
+    try:
+        return src_value.quantize(Decimal(str(precision)), rounding=ROUND_FLOOR)
+    except:
+        return None
 
 
 def dceiling(src_value: Decimal, precision) -> Decimal:
     '''切り上げ for Decimal'''
-    return src_value.quantize(Decimal(str(precision)), rounding=ROUND_CEILING)
+    try:
+        return src_value.quantize(Decimal(str(precision)), rounding=ROUND_CEILING)
+    except:
+        return None
