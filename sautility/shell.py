@@ -6,6 +6,7 @@ import tty
 import fcntl
 import termios
 import builtins as __builtin__
+from enum import Enum
 
 
 def print(*args, **kwargs):  # override pylint: disable-msg=W0622
@@ -69,3 +70,35 @@ def nb_getch():
         fcntl.fcntl(fno, fcntl.F_SETFL, org_fcntl)
         termios.tcsetattr(fno, termios.TCSANOW, org_attr)
     return in_key
+
+
+class TextColor(Enum):
+    '''for mk_color_str'''
+    BLACK = '\033[30m'
+    RED = '\033[31m'
+    GREEN = '\033[32m'
+    YELLOW = '\033[33m'
+    BLUE = '\033[34m'
+    PURPLE = '\033[35m'
+    CYAN = '\033[36m'
+    WHITE = '\033[37m'
+
+
+def mk_cstr(_txt, _color: TextColor) -> str:
+    '''make string with the colored'''
+    return _color.value + _txt + '\033[0m'
+
+
+class BackgroundColor(Enum):
+    '''for mk_bgcolor_str'''
+    RED = '\x1b[0;37;41m'
+    GREEN = '\x1b[0;37;42m'
+    YELLOW = '\x1b[0;37;43m'
+    BLUE = '\x1b[0;37;44m'
+    PURPLE = '\x1b[0;37;45m'
+    CYAN = '\x1b[0;37;46m'
+
+
+def mk_bgcstr(_txt, _color: BackgroundColor) -> str:
+    '''make string with the background color'''
+    return _color.value + _txt + '\x1b[0m'
