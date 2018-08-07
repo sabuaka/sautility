@@ -91,12 +91,22 @@ def mk_cstr(_txt, _color: TextColor) -> str:
 
 class BackgroundColor(Enum):
     '''for mk_bgcolor_str'''
-    RED = '\x1b[0;37;41m'
-    GREEN = '\x1b[0;37;42m'
-    YELLOW = '\x1b[0;37;43m'
-    BLUE = '\x1b[0;37;44m'
-    PURPLE = '\x1b[0;37;45m'
-    CYAN = '\x1b[0;37;46m'
+    W_BLACK = '\x1b[0;37;40m'
+    W_RED = '\x1b[0;37;41m'
+    W_GREEN = '\x1b[0;37;42m'
+    W_YELLOW = '\x1b[0;37;43m'
+    W_BLUE = '\x1b[0;37;44m'
+    W_PURPLE = '\x1b[0;37;45m'
+    W_CYAN = '\x1b[0;37;46m'
+    W_WHITE = '\x1b[0;37;47m'
+    B_BLACK = '\x1b[0;30;40m'
+    B_RED = '\x1b[0;30;41m'
+    B_GREEN = '\x1b[0;30;42m'
+    B_YELLOW = '\x1b[0;30;43m'
+    B_BLUE = '\x1b[0;30;44m'
+    B_PURPLE = '\x1b[0;30;45m'
+    B_CYAN = '\x1b[0;30;46m'
+    B_WHITE = '\x1b[0;30;47m'
 
 
 def mk_bgcstr(_txt, _color: BackgroundColor) -> str:

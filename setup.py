@@ -5,7 +5,7 @@ from setuptools import setup
 setup(
     name='sautility',
     packages=['sautility'],
-    version='1.8.0',
+    version='1.9.0',
     description='',
     author='sabuaka',
     author_email='sabuaka-fx@hotmail.com',
